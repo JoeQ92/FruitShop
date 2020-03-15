@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		D8100669241E4B4200DA662C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8100668241E4B4200DA662C /* AppDelegate.swift */; };
 		D810066B241E4B4200DA662C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810066A241E4B4200DA662C /* SceneDelegate.swift */; };
-		D810066D241E4B4200DA662C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810066C241E4B4200DA662C /* ViewController.swift */; };
+		D810066D241E4B4200DA662C /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810066C241E4B4200DA662C /* ShoppingViewController.swift */; };
 		D8100670241E4B4200DA662C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D810066E241E4B4200DA662C /* Main.storyboard */; };
 		D8100672241E4B4600DA662C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8100671241E4B4600DA662C /* Assets.xcassets */; };
 		D8100675241E4B4600DA662C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8100673241E4B4600DA662C /* LaunchScreen.storyboard */; };
 		D8100680241E4B4600DA662C /* FruitShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810067F241E4B4600DA662C /* FruitShopTests.swift */; };
+		D810068F241E4CD400DA662C /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810068E241E4CD400DA662C /* Fruit.swift */; };
+		D8100691241E4E7000DA662C /* ShoppingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8100690241E4E7000DA662C /* ShoppingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +32,7 @@
 		D8100665241E4B4200DA662C /* FruitShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8100668241E4B4200DA662C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D810066A241E4B4200DA662C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D810066C241E4B4200DA662C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D810066C241E4B4200DA662C /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
 		D810066F241E4B4200DA662C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8100671241E4B4600DA662C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8100674241E4B4600DA662C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +40,8 @@
 		D810067B241E4B4600DA662C /* FruitShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FruitShopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D810067F241E4B4600DA662C /* FruitShopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitShopTests.swift; sourceTree = "<group>"; };
 		D8100681241E4B4600DA662C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D810068E241E4CD400DA662C /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
+		D8100690241E4E7000DA662C /* ShoppingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +83,12 @@
 		D8100667241E4B4200DA662C /* FruitShop */ = {
 			isa = PBXGroup;
 			children = (
-				D8100668241E4B4200DA662C /* AppDelegate.swift */,
-				D810066A241E4B4200DA662C /* SceneDelegate.swift */,
-				D810066C241E4B4200DA662C /* ViewController.swift */,
+				D810068A241E4C1900DA662C /* Model */,
+				D810068B241E4C2500DA662C /* ViewModel */,
+				D810068C241E4C3400DA662C /* View */,
+				D810068D241E4C5400DA662C /* SupportFiles */,
 				D810066E241E4B4200DA662C /* Main.storyboard */,
-				D8100671241E4B4600DA662C /* Assets.xcassets */,
 				D8100673241E4B4600DA662C /* LaunchScreen.storyboard */,
-				D8100676241E4B4600DA662C /* Info.plist */,
 			);
 			path = FruitShop;
 			sourceTree = "<group>";
@@ -97,6 +100,41 @@
 				D8100681241E4B4600DA662C /* Info.plist */,
 			);
 			path = FruitShopTests;
+			sourceTree = "<group>";
+		};
+		D810068A241E4C1900DA662C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D810068E241E4CD400DA662C /* Fruit.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D810068B241E4C2500DA662C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D8100690241E4E7000DA662C /* ShoppingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D810068C241E4C3400DA662C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D810066C241E4B4200DA662C /* ShoppingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D810068D241E4C5400DA662C /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D8100668241E4B4200DA662C /* AppDelegate.swift */,
+				D810066A241E4B4200DA662C /* SceneDelegate.swift */,
+				D8100671241E4B4600DA662C /* Assets.xcassets */,
+				D8100676241E4B4600DA662C /* Info.plist */,
+			);
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,7 +238,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D810066D241E4B4200DA662C /* ViewController.swift in Sources */,
+				D810068F241E4CD400DA662C /* Fruit.swift in Sources */,
+				D810066D241E4B4200DA662C /* ShoppingViewController.swift in Sources */,
+				D8100691241E4E7000DA662C /* ShoppingViewModel.swift in Sources */,
 				D8100669241E4B4200DA662C /* AppDelegate.swift in Sources */,
 				D810066B241E4B4200DA662C /* SceneDelegate.swift in Sources */,
 			);
@@ -363,7 +403,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FruitShop/Info.plist;
+				INFOPLIST_FILE = FruitShop/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,7 +420,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FruitShop/Info.plist;
+				INFOPLIST_FILE = FruitShop/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

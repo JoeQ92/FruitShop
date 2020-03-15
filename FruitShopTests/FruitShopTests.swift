@@ -11,24 +11,40 @@ import XCTest
 
 class FruitShopTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    let shoppingViewModel = ShoppingViewModel()
+    
+    func testEmptyBasket() {
+        XCTAssertEqual(shoppingViewModel.getTotalPrice(), 0)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testSingleFruit() {
+        // 1 Apple
+        shoppingViewModel.addFruitsToBasket(fruits: [Fruit.apple])
+        XCTAssertEqual(shoppingViewModel.getTotalPrice(), 0.6)
+        
+        // 1 Orange
+        shoppingViewModel.emptyBasket()
+        shoppingViewModel.addFruitToBasket(fruit: Fruit.orange, quantity: 1)
+        XCTAssertEqual(shoppingViewModel.getTotalPrice(), 0.25)
+        
+        // Clear basket
+        shoppingViewModel.emptyBasket()
+        XCTAssertEqual(shoppingViewModel.getTotalPrice(), 0)
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testMultipleFruit() {
+        // 3 apples, 1 orange
+        shoppingViewModel.addFruitsToBasket(fruits: [Fruit.apple, Fruit.apple, Fruit.orange, Fruit.apple])
+        XCTAssertEqual(shoppingViewModel.getTotalPrice(), 2.05)
+        
+        // 2 apples, 6 oranges
+        shoppingViewModel.emptyBasket()
+        shoppingViewModel.addFruitToBasket(fruit: Fruit.apple, quantity: 2)
+        shoppingViewModel.addFruitToBasket(fruit: Fruit.orange, quantity: 6)
+        XCTAssertEqual(shoppingViewModel.getTotalPrice(), 2.7)
+        
+        // Clear basket
+        shoppingViewModel.emptyBasket()
+        XCTAssertEqual(shoppingViewModel.getTotalPrice(), 0)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
